@@ -31,5 +31,5 @@ MIDI input signals are transformed to CV/gate signals at a variable resolution
 1 Volt per ocatve such as from A3 to A4 (C major): 3.000 - 3.167 - 3.250 - 3.417 - 3.583 - 4.000 
 
 #### Gate
-
+V-trigger meaning that 0 is off and 1 Volt is on. Pretty much simultating analog binary hence the somewhat odd transformation from Midi noteOn/Off events to quantized binary representing voltageswhci in turn get interpretted to swich the audio output on the DSN.     
      
