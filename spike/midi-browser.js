@@ -70,5 +70,8 @@ function logMidiMessage(event) {
     console.log('type', type);
     console.log('note', note);
     console.log('velocity', velocity);
+
+
+
 }
 

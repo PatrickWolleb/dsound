@@ -23,12 +23,15 @@ A distributed software synthesizer utilising dsound protocol for communicating c
 - CV/gate https://en.wikipedia.org/wiki/CV/gate 
 
 ### Input transformation
-MIDI input signals are transformed to CV/gate signals at a variable resolution
+MIDI input signals are transformed to CV/gate signals at a variable samlpling frequency and bit depth.
 - http://www.midikits.net/midi_analyser/midi_note_frequency.htm  
-- http://www.midikits.net/midi_analyser/midi_note_numbers_for_octaves.htm 
+- http://www.midikits.net/midi_analyser/midi_note_numbers_for_octaves.htm  
+- http://www.doepfer.de/a1922.htm
 
 #### CV
-1 Volt per ocatve such as from A3 to A4 (C major): 3.000 - 3.167 - 3.250 - 3.417 - 3.583 - 4.000 
+1 Volt per ocatve such as from A3 to A4 (C major): 3.000V - 3.167V - 3.250V - 3.417V - 3.583V - 4.000V
+- CVN for midi note 0...+10V
+- CVV for midi note 0...+5V
 
 #### Gate
 V-trigger meaning that 0 is off and 1 Volt is on. Pretty much simultating analog binary hence the somewhat odd transformation from Midi noteOn/Off events to quantized binary representing voltageswhci in turn get interpretted to swich the audio output on the DSN.     

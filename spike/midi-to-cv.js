@@ -8,3 +8,18 @@
 
 'use strict';
 
+(function(w) {
+  w.cvg = (function() {
+    return {
+
+      noteOn: function(note, velocity) {
+
+      },
+
+      noteOff: function(note, velocity) {
+
+      }
+
+    };
+  })();
+})(window);
