@@ -8,6 +8,25 @@ A distributed software synthesizer utilising dsound protocol for communicating c
 ### Signal flow
 - Browser - WSMIDI -> DSA -DSPacket-> DSN 1 -DSPacket...n-> DSA -WSMIDI-> Browser
 
+
+BROWSER\
+        |
+        |via DSPacket over WS
+        |
+       DSA
+        |
+        |via DSPacket over UDP
+        |
+        |
+        \-----DSN-VCO1--\
+         \               \---DSN-MIXER---DSN-VCF---DSN-VCA---\
+          \---DSN-VCO2---/                                    |
+                                                             DSA
+                                                              |
+                                                              \---BROWSER
+
+
+
 ### Inpsiration
 - https://en.wikipedia.org/wiki/RTP-MIDI
 - https://www.npmjs.com/package/osc
@@ -22,10 +41,10 @@ A distributed software synthesizer utilising dsound protocol for communicating c
 **DSA** represents the website exposing a websocket interface for browsers to send MIDI messages to. The wesocket frames translate into UDP packages fot hole-punched transmission.  
 
 #### DSPacket
-**DSPacket** contains MIDI or audio information as well as information third-party routing information such as a VCO on machine1 receiving a DSPacket will know that the generated audio output DSPacket be sent to machine2 and so on. It is utilising UDP, connection less and therefore exposed to be lost.  
+**DSP** contains MIDI or audio information as well as information third-party routing information such as a VCO on machine1 receiving a DSPacket will know that the generated audio output DSPacket be sent to machine2 and so on. It is utilising UDP, connection less and therefore exposed to be lost. 
 
-#### WSMIDI
-**WSMIDI** is a MIDI message over websockets.  
+#### WS
+**WS** is a DSpacket over websockets.  
 
 ## DSnode
 
