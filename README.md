@@ -27,7 +27,7 @@ BROWSER\
 
 
 
-### Inpsiration
+### Inspiration
 - https://en.wikipedia.org/wiki/RTP-MIDI
 - https://www.npmjs.com/package/osc
 
